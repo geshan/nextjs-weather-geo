@@ -1,5 +1,8 @@
 import Image from 'next/image';
 import styles from './page.module.css';
+import Script from 'next/script';
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
 
 async function getWeatherData(city) {
   const res = await fetch(`https://api.api-ninjas.com/v1/weather?city=${city}`, {
@@ -57,6 +60,18 @@ export default async function Home(req) {
       <div className={styles.grid}>
         
       </div>
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_MEASUREMENT_ID}');
+        `}
+      </Script>
     </main>
   )
 }
