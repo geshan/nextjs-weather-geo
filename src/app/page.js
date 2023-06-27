@@ -1,13 +1,28 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import Image from 'next/image';
+import styles from './page.module.css';
 
-export default function Home() {
+async function getWeatherData(city) {
+  const res = await fetch(`https://api.api-ninjas.com/v1/weather?city=${city}`, {
+    headers: {
+      'Content-Type': 'application/json',
+      'X-API-Key': process.env.API_NINJAS_API_KEY,
+    },
+  })
+  const data = await res.json(); 
+  data.city = city;
+ 
+  return data;
+}
+
+export default async function Home(req) {
+  const city = req.searchParams.city || 'London';
+  const weatherData = await getWeatherData(city);
   return (
     <main className={styles.main}>
       <div className={styles.description}>
         <p>
-          Current temprature in Sydney is 
-          <code className={styles.code}> 20°C</code>
+          Current temprature in {weatherData.city} is 
+          <code className={styles.code}> {weatherData.temp} C</code>
         </p>
         <div>
           <a
