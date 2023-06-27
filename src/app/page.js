@@ -18,7 +18,7 @@ async function getWeatherData(city) {
 }
 
 export default async function Home(req) {
-  const city = req.searchParams.city || 'London';
+  const city = req.searchParams.city || req.geo.city || 'London';
   const weatherData = await getWeatherData(city);
   return (
     <main className={styles.main}>
