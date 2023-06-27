@@ -10,7 +10,9 @@ export async function GET(req) {
       'X-API-Key': process.env.API_NINJAS_API_KEY,
     },
   })
-  const data = await res.json()
+  const data = await res.json();
+  data.country = req.geo.country || 'US';
+  data.region = req.geo.region || 'CA'
  
   return NextResponse.json({ data });
 }
