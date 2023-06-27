@@ -1,8 +1,10 @@
 import { NextResponse } from 'next/server'
  
 export async function GET(req) {
-  console.log(`req:`, req.geo);
-  const city = req.geo.city || 'Sydney';
+  const url = new URL(req.headers.get('x-middleware-rewrite'));
+  const city = url.searchParams.get('city');
+  const country = url.searchParams.get('country');
+  const region = url.searchParams.get('region');
 
   const res = await fetch(`https://api.api-ninjas.com/v1/weather?city=${city}`, {
     headers: {
@@ -11,8 +13,9 @@ export async function GET(req) {
     },
   })
   const data = await res.json();
-  data.country = req.geo.country || 'US';
-  data.region = req.geo.region || 'CA'
+  data.city = city;
+  data.country = country;
+  data.region = region;
  
   return NextResponse.json({ data });
 }
