@@ -1,7 +1,5 @@
 import Image from 'next/image'
 import styles from './page.module.css'
-import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
-
 
 export default function Home() {
   return (
