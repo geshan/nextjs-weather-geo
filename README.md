@@ -1,34 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Simple weather app with Next.js 13
 
-## Getting Started
+This is a simple weather app built with Next.js 13 using JavaScript (not TypeScript).
 
-First, run the development server:
+### Run it locally
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+To run it locally you can clone the app and run `npm run dev`.
+
+### Environment variables
+
+It will need a key from [API Ninjas](https://api-ninjas.com/api) for the weather to work. You can get a free key from them.
+
+You can also add a GA4 tracking ID to track the app. Both of these keys should be added
+to the `.env` file you can copy the `.env.example` file to `.env` and add the keys there by replacing the values shown below:
+
+```
+API_NINJAS_API_KEY="API_NINJAS_API_KEY-value"
+NEXT_PUBLIC_GA_MEASUREMENT_ID="G-**--------"
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Deploy it to Vercel
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+You can deploy it to Vercel by clicking the button below:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fgeshan%2Fnextjs-weather-geo&env=API_NINJAS_API_KEY,NEXT_PUBLIC_GA_MEASUREMENT_ID&envDescription=The%20api%20key%20for%20API%20Ninjas%20and%20the%20GA4%20id%20to%20track%20user%20visits&demo-title=The%20Working%20app&demo-description=With%20Sydney%20sent%20in%20as%20the%20city%20to%20get%20the%20weather&demo-url=https%3A%2F%2Fnextjs-weather-geo.vercel.app%2F%3Fcity%3Dsydney&demo-image=https%3A%2F%2Fgcdnb.pbrd.co%2Fimages%2FeghahrNX2esF.jpg%3Fo%3D1)
 
-## Learn More
+### Demo
 
-To learn more about Next.js, take a look at the following resources:
+You can see the demo of the app at [https://nextjs-weather-geo.vercel.app/](https://nextjs-weather-geo.vercel.app/) and pass the city as the parameter like:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+https://nextjs-weather-geo.vercel.app/?city=sydney
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+By default it will load the weather for London.
