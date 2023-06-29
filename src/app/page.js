@@ -3,7 +3,6 @@ import styles from './page.module.css';
 import Script from 'next/script';
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
-
 async function getWeatherData(city) {
   const res = await fetch(`https://api.api-ninjas.com/v1/weather?city=${city}`, {
     headers: {
@@ -57,9 +56,7 @@ export default async function Home(req) {
         />
       </div>
 
-      <div className={styles.grid}>
-        
-      </div>
+      <div className={styles.grid}></div>
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
         strategy="afterInteractive"
