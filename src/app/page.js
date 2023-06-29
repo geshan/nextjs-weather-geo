@@ -23,7 +23,7 @@ export default async function Home(req) {
     <main className={styles.main}>
       <div className={styles.description}>
         <p>
-          Current temprature in {weatherData.city} is 
+          Current temperature in {weatherData.city} is 
           <code className={styles.code}> {weatherData.temp} C</code>
         </p>
         <div>
