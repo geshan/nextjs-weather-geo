@@ -11,7 +11,7 @@ To run it locally you can clone the app and run `npm run dev`.
 It will need a key from [API Ninjas](https://api-ninjas.com/api) for the weather to work. You can get a free key from them.
 
 You can also add a GA4 tracking ID to track the app. Both of these keys should be added
-to the `.env` file you can copy the `.env.example` file to `.env` and add the keys there by replacing the values shown below:
+to the `.env.local` file you can copy the `.env.example` file to `.env.local` and add the keys there by replacing the values shown below:
 
 ```
 API_NINJAS_API_KEY="API_NINJAS_API_KEY-value"
