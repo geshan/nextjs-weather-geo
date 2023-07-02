@@ -2,6 +2,10 @@
 
 This is a simple weather app built with Next.js 13 using JavaScript (not TypeScript).
 
+### For a blog post
+
+This is a demo (proof of concept) app for a blog post about [Next.js environment variables](https://geshan.com.np/blog/2023/06/nextjs-env-variables/).
+
 ### Run it locally
 
 To run it locally you can clone the app and run `npm run dev`.
@@ -11,7 +15,7 @@ To run it locally you can clone the app and run `npm run dev`.
 It will need a key from [API Ninjas](https://api-ninjas.com/api) for the weather to work. You can get a free key from them.
 
 You can also add a GA4 tracking ID to track the app. Both of these keys should be added
-to the `.env.local` file you can copy the `.env.example` file to `.env.local` and add the keys there by replacing the values shown below:
+to the `.env.local` file you can copy the `.env.example` file to `.env.local` and add the keys thereby replacing the values shown below:
 
 ```
 API_NINJAS_API_KEY="API_NINJAS_API_KEY-value"
@@ -32,4 +36,4 @@ You can see the demo of the app at [https://nextjs-weather-geo.vercel.app/](http
 https://nextjs-weather-geo.vercel.app/?city=sydney
 ```
 
-By default it will load the weather for London.
+By default, it will load the weather for London.
