@@ -33,3 +33,5 @@ https://nextjs-weather-geo.vercel.app/?city=sydney
 ```
 
 By default it will load the weather for London.
+
+To test out rebase.
